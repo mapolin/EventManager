@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <title>Framework</title>
+
+    <!-- VENDORS -->
+    <script src="src/lodash.js"></script>
+
+    <!-- EVENT MANAGER -->
+    <script src="src/event.manager.js"></script>
+
+    <!-- SAMPLE KEYBOARD HANDLER -->
+    <script src="src/keyboard.js"></script>
+</head>
+<body>
+    <div id="key"></div>
+
+    <script>
+        var key = document.querySelector('#key');
+        
+        var kb = new Keyboard();
+
+        // bind callback to 'esc' key handler in keyboard.js
+        kb.on('esc', function(event) {
+            key.innerHTML += event.keyCode + ' esc <br>';
+        });
+
+        // bind callback to 'up' key handler in keyboard.js
+        kb.on('up', function(event) {
+            key.innerHTML += event.keyCode + ' up <br>';
+        });
+
+        // bind callback to 'down' key handler in keyboard.js
+        kb.on('down', function(event) {
+            key.innerHTML += event.keyCode + ' down <br>';
+        });
+
+        // bind callback to 'right' key handler in keyboard.js
+        kb.on('right', function(event) {
+            key.innerHTML += event.keyCode + ' right <br>';
+        });
+
+        // bind callback to 'left' key handler in keyboard.js
+        kb.on('left', function(event) {
+            key.innerHTML += event.keyCode + ' left <br>';
+        });
+    </script>
+</body>
+</html>
